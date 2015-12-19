@@ -1,5 +1,19 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  script.
+    var redirect = function() {
+      var unitString = document.getElementById("unitString").value;
+      console.log(unitString);
+      if (document.location.hostname == "localhost"){
+        window.location = "http://localhost:3000/api/" + unitString;
+      }
+      else {
+        window.location = "si-units.herokuapp.com/api/" + unitString;
+      }
+    }
+  h1 Welcome to #{title}
+  p.
+    Quickly convert some combination of units into SI units.  This program will also give you a conversion factor
+  input( type = "text" id = "unitString")
+  input( type = "submit" value = "Convert" onclick = "redirect()")
