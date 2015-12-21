@@ -6,10 +6,10 @@ block content
       var unitString = document.getElementById("unitString").value;
       console.log(unitString);
       if (document.location.hostname == "localhost"){
-        window.location = "http://localhost:3000/api/" + unitString;
+        window.location = "http://localhost:3000/api/?unit_string=" + unitString;
       }
       else {
-        window.location = "si-units.herokuapp.com/api/" + unitString;
+        window.location = "si-units.herokuapp.com/api/?unit_string=" + unitString;
       }
     }
   h1 Welcome to #{title}
