@@ -1,0 +1,10 @@
+Hosted on si-units.herokuapp.com
+
+Sample url: http://si-units.herokuapp.com/api/?unit_string=liters*minutes/%27*bels
+Output: {"unit_name":"meters^3*seconds/radians","multiplication_factor":237.47114111194608,"linear_shift":0}
+
+/api
+  /api/?unitString=
+    The string following ?unitString= will be converted to SI units.  The string can consist of single units, units multiplied together, units divided by each other, or any combination of multiplication and division.  For example, valid input would include "liters", "liters*hours", "liters/hours", and "liters/hours*bels".
+    The output has three values:  the SI units, the conversion factor from the input to SI units, and the linear shift.  For example, if the input was "liters", the output would be {"unit_name":"meters^3","multiplication_factor":0.001,"linear_shift":0}
+    Some constraints include:  units must be in plural form ("liters" rather than "liter").  Moreover, this API only covers a small portion of the large number of available units.  
